@@ -1,0 +1,78 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.addCardButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 30px;
+	right: 30px;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	bottom: 70px;
+}
+.card {
+	width: 17vw;
+}
+.modal-backdrop {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1200px) {
+	.card {
+		width: 40%;
+	}
+}
+@media (max-width: 768px) {
+	.card {
+		width: 100%;
+	}
+	.navbar-collapse {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+	.navbar-nav {
+		flex-direction: row;
+		gap: 10px;
+	}
+	.searchBarDiv {
+		align-self: center;
+	}
+	.darkModeToggle {
+		order: 1;
+	}
+}
+@media (max-width: 576px) {
+	.addCardButton {
+		width: 50px;
+		height: 50px;
+	}
+	.card {
+		width: 80%;
+	}
+	.home {
+		width: 80%;
+	}
+	.px-5 {
+		padding-left: 1.5rem !important;
+		padding-right: 1.5rem !important;
+	}
+
+	.Toastify__toast {
+		font-size: 0.875rem; /* Adjust the font size as needed */
+	}
+}
