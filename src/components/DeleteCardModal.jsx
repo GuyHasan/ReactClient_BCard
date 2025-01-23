@@ -10,7 +10,7 @@ function DeleteCardModal({ show, handleClose, handleDelete, card }) {
 				<Modal.Title>Warning</Modal.Title>
 			</Modal.Header>
 			<Modal.Body className='text-center fw-400 fs-5 border-0'>
-				<p className='text-capitalize'>Are you sure you want to delete {title} Business card?</p>
+				<p className='text-capitalize'>Are you sure you want to delete the {title} Business card?</p>
 			</Modal.Body>
 
 			<Modal.Footer className='justify-content-center border-0'>

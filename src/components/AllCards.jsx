@@ -40,11 +40,9 @@ function AllCards() {
 	useEffect(() => {
 		fetchCards();
 	}, []);
-
 	useEffect(() => {
 		updateCardsFetch();
 	}, [cardsChanged]);
-
 	useEffect(() => {
 		if (searchQuery) {
 			setLoading(true);
@@ -81,19 +79,7 @@ function AllCards() {
 			</div>
 			<button
 				onClick={scrollToTop}
-				style={{
-					position: "fixed",
-					bottom: "70px",
-					left: "20px",
-					border: "none",
-					borderRadius: "50%",
-					width: "35px",
-					height: "35px",
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					cursor: "pointer",
-				}}>
+				style={{ position: "fixed", bottom: "70px", left: "20px", border: "none", borderRadius: "50%", width: "35px", height: "35px", display: "flex", justifyContent: "center", alignItems: "center", cursor: "pointer" }}>
 				<i className='fas fa-arrow-up'></i>
 			</button>
 		</>

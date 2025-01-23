@@ -6,7 +6,7 @@ import { successMessage } from "../services/messageServices";
 import { ThemeContext } from "../ThemeProvider";
 import SearchBar from "./SearchBar";
 
-function Navbar({ setThemeChanged }) {
+function Navbar() {
 	const { theme, toggleTheme } = useContext(ThemeContext);
 	let { userLoggedIn } = useContext(authContext);
 	let { setUserLoggedIn } = useContext(authContext);
@@ -56,13 +56,7 @@ function Navbar({ setThemeChanged }) {
 						</ul>
 						<div className='d-flex mb-1'>
 							<SearchBar />
-							<div
-								className='d-flex align-items-center mx-2 darkModeToggle'
-								onClick={() => {
-									toggleTheme();
-									setThemeChanged((prev) => !prev);
-								}}
-								style={{ cursor: "pointer" }}>
+							<div className='d-flex align-items-center mx-2 darkModeToggle' onClick={() => toggleTheme()} style={{ cursor: "pointer" }}>
 								{theme === "dark" ? <i className='fa-solid fa-sun'></i> : <i className='fa-regular fa-moon'></i>}
 							</div>
 						</div>

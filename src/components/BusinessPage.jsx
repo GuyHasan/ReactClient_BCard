@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getCardById } from "../services/cardService";
+import { Spinner } from "react-bootstrap";
 
 function BusinessPage() {
 	let { id } = useParams();
@@ -46,7 +47,9 @@ function BusinessPage() {
 					</p>
 				</div>
 			) : (
-				<h1>Loading...</h1>
+				<Spinner animation='border' role='status'>
+					<span className='visually-hidden'>Loading...</span>
+				</Spinner>
 			)}
 		</>
 	);

@@ -80,6 +80,9 @@ export const updateUser = async (user) => {
 		let response = await axios(config);
 		return response.data;
 	} catch (error) {
+		if (error.status === 400) {
+			errorMessage("Bad Request, Please check your input");
+		}
 		console.log(error);
 	}
 };

@@ -5,7 +5,7 @@ import { jwtDecode } from "jwt-decode";
 import { ThemeContext } from "../ThemeProvider";
 
 function Footer() {
-	const { theme, toggleTheme } = useContext(ThemeContext);
+	const { theme } = useContext(ThemeContext);
 	const { userLoggedIn } = useContext(authContext);
 	const { token } = useContext(authContext);
 	const isBusiness = token ? jwtDecode(token).isBusiness : false;

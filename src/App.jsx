@@ -26,8 +26,6 @@ export const cardContext = createContext();
 export const userContext = createContext();
 
 function App() {
-	const [themeForToast, setThemeForToast] = useState("light");
-	const [themeChanged, setThemeChanged] = useState(false);
 	const [token, setToken] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [cardsChanged, setCardsChanged] = useState(false);
@@ -49,9 +47,6 @@ function App() {
 			setToken(null);
 		}
 	}, [userLoggedIn]);
-	useEffect(() => {
-		setThemeForToast(localStorage.getItem("theme"));
-	}, [themeChanged]);
 
 	return (
 		<>
@@ -60,7 +55,7 @@ function App() {
 					<authContext.Provider value={{ token, setToken, userLoggedIn, setUserLoggedIn }}>
 						<userContext.Provider value={{ userChanged, setUserChanged }}>
 							<Router>
-								<Navbar setThemeChanged={setThemeChanged} />
+								<Navbar />
 								<Routes>
 									<Route path='/' element={<Home />} />
 									<Route path='/cards'>
@@ -85,7 +80,7 @@ function App() {
 						</button>
 					)}
 					<CreateCardModal show={showAddCard} setShow={setShowAddCard} />
-					<ToastContainer theme={themeForToast} />
+					<ToastContainer theme='colored' />
 				</cardContext.Provider>
 			</ThemeProvider>
 		</>

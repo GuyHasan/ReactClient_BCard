@@ -2,13 +2,13 @@ import axios from "axios";
 import { errorMessage } from "./messageServices";
 
 export const getAllCards = async () => {
-	let config = {
-		method: "get",
-		maxBodyLength: Infinity,
-		url: "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards",
-		headers: {},
-	};
 	try {
+		let config = {
+			method: "get",
+			maxBodyLength: Infinity,
+			url: "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards",
+			headers: {},
+		};
 		const response = await axios.request(config);
 		return response.data;
 	} catch (error) {
@@ -76,9 +76,7 @@ export const createCard = async (card) => {
 		const response = await axios.request(config);
 		return response.data;
 	} catch (error) {
-		if (error.response.status === 401) {
-			errorMessage("Unauthorized, Please login to create a card");
-		} else if (error.response.status === 400) {
+		if (error.response.status === 400) {
 			errorMessage("Bad Request, Please check your input");
 		} else {
 			errorMessage("Card creation failed");
@@ -122,9 +120,7 @@ export const updateCard = async (card, cardId) => {
 		const response = await axios.request(config);
 		return response.data;
 	} catch (error) {
-		if (error.response.status === 401) {
-			errorMessage("Unauthorized, Please login to edit a card");
-		} else if (error.response.status === 400) {
+		if (error.response.status === 400) {
 			errorMessage("Bad Request, Please check your input");
 		} else {
 			errorMessage("Card update failed");
@@ -148,18 +144,5 @@ export const deleteCard = async (cardId) => {
 		return response.data;
 	} catch (error) {
 		console.log(error);
-	}
-};
-
-export const refreshCards = async (cardsType) => {
-	switch (cardsType) {
-		case "all":
-			return await getAllCards();
-		case "my":
-			return await getMyCards();
-		case "favorite":
-			return await getFavoriteCards();
-		default:
-			return [];
 	}
 };

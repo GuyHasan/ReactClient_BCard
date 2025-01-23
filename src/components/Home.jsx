@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getAllCards } from "../services/cardService";
 import { ShowCards } from "./ShowCards";
 import { cardContext } from "../App";

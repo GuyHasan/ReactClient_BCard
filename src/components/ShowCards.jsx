@@ -56,13 +56,13 @@ export const ShowCards = ({ cards = [] }) => {
 				<h5 className='card-title text-capitalize mx-5'>{card.title}</h5>
 				<h6 className='card-subtitle text-muted text-capitalize mb-2'>{card.subtitle}</h6>
 				<p className='card-text mb-0'>
-					<i class='fa-solid fa-paper-plane'></i> <span className='fw-bold'>Email:</span> {card.email}
+					<i className='fa-solid fa-paper-plane'></i> <span className='fw-bold'>Email:</span> {card.email}
 				</p>
 				<p className='card-text mb-0'>
-					<i class='fa-solid fa-phone'></i> <span className='fw-bold'>Phone:</span> {card.phone}
+					<i className='fa-solid fa-phone'></i> <span className='fw-bold'>Phone:</span> {card.phone}
 				</p>
 				<p className='card-text text-capitalize'>
-					<i class='fa-solid fa-map-location-dot'></i> <span className='fw-bold'>Address:</span> {card.address.country}, {card.address.city}, {card.address.street} {card.address.houseNumber}
+					<i className='fa-solid fa-map-location-dot'></i> <span className='fw-bold'>Address:</span> {card.address.country}, {card.address.city}, {card.address.street} {card.address.houseNumber}
 				</p>
 				<button className='btn btn-info mb-3 w-75 ' onClick={() => moveToBusinessPage(card._id)}>
 					See Business Page

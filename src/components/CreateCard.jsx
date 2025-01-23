@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { createCard } from "../services/cardService";
 import { useContext } from "react";
 import { cardContext } from "../App";
-import { errorMessage, successMessage } from "../services/messageServices";
+import { successMessage } from "../services/messageServices";
 
 function CreateCard({ setShow }) {
 	const { setCardsChanged } = useContext(cardContext);
