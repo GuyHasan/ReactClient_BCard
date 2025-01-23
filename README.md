@@ -16,6 +16,12 @@ BCard is a React-based web application that allows users to create and manage di
 - **Adaptive Alerts:** The website uses the React-Toastify library for adaptive alerts.
 - **Form Validation:** Frontend forms validation is performed using Formik and Yup, ensuring compliance with server-side documentation to minimize unnecessary requests.
 - **Authentication and Authorization:** The website is designed to prevent unauthorized access to pages and server requests through token management in session storage and an auth hook for necessary pages.
+- **Search Bar:**
+  - The header of the site includes a search bar, which allows users to search for businesses by their title from any page of the site.
+  - Upon typing, the user is automatically transferred to the All Cards page while seeing the matching cards.
+  - The cards filter live according to the search value.
+  - Upon moving to a different page, the search is cleared.
+
 
 ## Web Pages
 
