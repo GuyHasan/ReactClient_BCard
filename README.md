@@ -26,7 +26,7 @@ The homepage provides an overview of the BCard platform and highlights its key f
 The About page contains information about BCard, its mission, and the team behind the project. This page aims to give users insight into the platform's goals and the people who built it.
 
 ### All Cards
-The All Cards page displays a collection of all the business cards created by users on the platform. Users can browse, search, and view business cards, and like them to save them to their favorites.
+The All Cards page displays a collection of all the business cards created by users on the platform. Users can browse, search, and view business cards, and like them to save them to their favorites. can be access only from home page.
 
 ### My Cards
 The My Cards page is accessible only to business users and displays all the business cards they have created. Users can manage their cards, including editing and deleting them. can be access only as logged in business user.
