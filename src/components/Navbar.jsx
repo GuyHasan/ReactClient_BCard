@@ -27,7 +27,7 @@ function Navbar({ setThemeChanged }) {
 			<nav className={`navbar navbar-expand-lg ${theme === "light" ? "navbar-light bg-light" : "navbar-dark bg-dark"} px-5`}>
 				<div className='container-fluid'>
 					<NavLink className='navbar-brand' to='/'>
-						BCard
+						<i className='fa-solid fa-building'></i> BCard <span style={{ fontSize: "0.75rem", display: "block", transform: "translateY(-5px)" }}>Businesses Social Network</span>
 					</NavLink>
 					<button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
 						<span className='navbar-toggler-icon'></span>

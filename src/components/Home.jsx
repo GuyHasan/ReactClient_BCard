@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAllCards } from "../services/cardService";
 import { ShowCards } from "./ShowCards";
 import { cardContext } from "../App";
@@ -42,9 +42,11 @@ function Home() {
 		<>
 			<div className='container d-flex flex-column justify-content-center align-items-center gap-3 mt-5 home'>
 				<h2 className='text-center'>BCard - Worldwide Business Site </h2>
-				<h5 className='text-center'>The Biggest Site For Business Cards</h5>
-				<p className='w-75 text-center'>
-					The website gatherer many type of information about diffrenets type of business, you can look around and search for your disire business, and also add your own business or mark your favorite ones! here is some examples:
+				<h5 className='text-center'>Welcome to BCard!</h5>
+				<p className='w-75 text-center text-wrap text-capitalize' style={{ lineHeight: "1.5" }}>
+					The Biggest Site For Business, A One of a kind website that Include Any Type of Business, Each Represented by a Business Card. <br />
+					Each Business Have is Own Page With Advance Information About it, In Addition, by register to are website You Can Add Your Own Business Card, Edit it, Delete it, Save Your Favorite Business, and More! The website gatherer many
+					type of information about diffrenets type of business, you can look around and search for your desire business! here is some examples:
 				</p>
 				{loading && !hasFetched ? (
 					<Spinner animation='border' role='status'>

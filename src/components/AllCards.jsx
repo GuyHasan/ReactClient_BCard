@@ -13,6 +13,13 @@ function AllCards() {
 	let [hasFetched, setHasFetched] = useState(false);
 	let { cardsChanged, loading, setLoading } = useContext(cardContext);
 
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	};
+
 	const fetchCards = async () => {
 		try {
 			setLoading(true);
@@ -72,6 +79,23 @@ function AllCards() {
 				)}
 				<p className='spacerFromFooter mx-5'></p>
 			</div>
+			<button
+				onClick={scrollToTop}
+				style={{
+					position: "fixed",
+					bottom: "70px",
+					left: "20px",
+					border: "none",
+					borderRadius: "50%",
+					width: "35px",
+					height: "35px",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					cursor: "pointer",
+				}}>
+				<i className='fas fa-arrow-up'></i>
+			</button>
 		</>
 	);
 }

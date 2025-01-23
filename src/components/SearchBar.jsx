@@ -16,8 +16,9 @@ function SearchBar() {
 	}, [location]);
 	return (
 		<>
-			<div className='d-flex searchBarDiv'>
-				<input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' ref={searchRef} onChange={handleSearch} />
+			<div className='d-flex searchBarDiv position-relative'>
+				<input className='form-control me-2' type='search' placeholder='Search Business...' aria-label='Search' ref={searchRef} onChange={handleSearch} />
+				<i className='fas fa-search position-absolute top-50 end-0 translate-middle-y me-3'></i>
 			</div>
 		</>
 	);
