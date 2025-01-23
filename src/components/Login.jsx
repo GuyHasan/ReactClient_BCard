@@ -5,8 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { errorMessage, successMessage } from "../services/messageServices";
 import { authContext } from "../App";
+import useAuth from "../hooks/useAuth";
 
 function Login() {
+	useAuth("login");
+
 	let { setUserLoggedIn } = useContext(authContext);
 	const navigate = useNavigate();
 	const formik = useFormik({

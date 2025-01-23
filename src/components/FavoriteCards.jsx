@@ -7,8 +7,7 @@ import useAuth from "../hooks/useAuth";
 import { Spinner } from "react-bootstrap";
 
 function FavoriteCards() {
-	const isAuthenticated = useAuth("favorites");
-	if (!isAuthenticated) return null;
+	useAuth("favorites");
 
 	let { cardsChanged, loading, setLoading } = useContext(cardContext);
 	let [favoriteCards, setFavoriteCards] = useState([]);

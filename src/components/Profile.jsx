@@ -6,8 +6,7 @@ import useAuth from "../hooks/useAuth";
 import { Spinner } from "react-bootstrap";
 
 function Profile() {
-	const isAuthenticated = useAuth("profile");
-	if (!isAuthenticated) return null;
+	useAuth("profile");
 
 	let { token } = useContext(authContext);
 	let { userChanged } = useContext(userContext);

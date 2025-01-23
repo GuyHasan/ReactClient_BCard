@@ -6,8 +6,7 @@ import useAuth from "../hooks/useAuth";
 import { Spinner } from "react-bootstrap";
 
 function MyCards() {
-	const isAuthenticated = useAuth("my-cards");
-	if (!isAuthenticated) return null;
+	useAuth("my-cards");
 
 	let { cardsChanged, loading, setLoading } = useContext(cardContext);
 	let [cards, setCards] = useState([]);

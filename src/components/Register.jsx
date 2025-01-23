@@ -1,11 +1,13 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { errorMessage, successMessage } from "../services/messageServices";
-import { ToastContainer } from "react-toastify";
+import { successMessage } from "../services/messageServices";
 import { registerUser } from "../services/userService";
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function Register() {
+	useAuth("signup");
+
 	const formik = useFormik({
 		initialValues: {
 			name: {
