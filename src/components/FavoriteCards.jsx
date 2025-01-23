@@ -61,7 +61,7 @@ function FavoriteCards() {
 						You don't have any favorite cards yet! <br /> Like the cards you want to add to your favorites.
 					</p>
 				) : (
-					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2'>
+					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2 w-100'>
 						<ShowCards cards={favoriteCards} />
 					</div>
 				)}

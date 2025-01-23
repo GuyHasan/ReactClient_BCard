@@ -66,7 +66,7 @@ function AllCards() {
 				) : (searchQuery && filteredCards.length === 0) || (!searchQuery && cards.length === 0) ? (
 					<h5 className='text-center'>Not Found Any Cards</h5>
 				) : (
-					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2'>
+					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2 w-100'>
 						<ShowCards cards={searchQuery ? filteredCards : cards} />
 					</div>
 				)}

@@ -59,7 +59,7 @@ function MyCards() {
 						You haven't created any cards yet! <br /> Click on the "add" button at the bottom-right to create your first Business Card.
 					</p>
 				) : (
-					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2'>
+					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2 w-100'>
 						<ShowCards cards={cards} />
 					</div>
 				)}

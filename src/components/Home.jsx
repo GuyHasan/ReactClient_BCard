@@ -53,7 +53,7 @@ function Home() {
 				) : exampleCards.length === 0 ? (
 					<h3>Not Found Any Cards</h3>
 				) : (
-					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2'>
+					<div className='d-flex flex-wrap gap-5 px-5 justify-content-center my-2 w-100'>
 						<ShowCards cards={exampleCards} />
 					</div>
 				)}
