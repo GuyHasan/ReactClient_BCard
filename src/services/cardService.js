@@ -1,12 +1,13 @@
 import axios from "axios";
 import { errorMessage } from "./messageServices";
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
 export const getAllCards = async () => {
 	try {
 		let config = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards",
+			url: `${apiUrl}/cards`,
 			headers: {},
 		};
 		const response = await axios.request(config);
@@ -21,7 +22,7 @@ export const getCardById = async (id) => {
 		let config = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/${id}`,
+			url: `${apiUrl}/cards/${id}`,
 			headers: {},
 		};
 		const response = await axios.request(config);
@@ -33,11 +34,10 @@ export const getCardById = async (id) => {
 
 export const getMyCards = async (token) => {
 	try {
-		let token = sessionStorage.getItem("token");
 		let config = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/my-cards",
+			url: `${apiUrl}/cards/my-cards`,
 			headers: {
 				"x-auth-token": token,
 			},
@@ -66,7 +66,7 @@ export const createCard = async (card) => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards",
+			url: `${apiUrl}/cards`,
 			headers: {
 				"Content-Type": "application/json",
 				"x-auth-token": token,
@@ -91,7 +91,7 @@ export const likeCard = async (cardId) => {
 		let config = {
 			method: "patch",
 			maxBodyLength: Infinity,
-			url: `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/${cardId}`,
+			url: `${apiUrl}/cards/${cardId}`,
 			headers: {
 				"x-auth-token": token,
 			},
@@ -110,7 +110,7 @@ export const updateCard = async (card, cardId) => {
 		let config = {
 			method: "put",
 			maxBodyLength: Infinity,
-			url: `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/${cardId}`,
+			url: `${apiUrl}/cards/${cardId}`,
 			headers: {
 				"Content-Type": "application/json",
 				"x-auth-token": token,
@@ -135,7 +135,7 @@ export const deleteCard = async (cardId) => {
 		let config = {
 			method: "delete",
 			maxBodyLength: Infinity,
-			url: `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/${cardId}`,
+			url: `${apiUrl}/cards/${cardId}`,
 			headers: {
 				"x-auth-token": token,
 			},

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import { errorMessage } from "./messageServices";
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
 export const userLogin = async (email, password) => {
 	try {
@@ -12,7 +13,7 @@ export const userLogin = async (email, password) => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/login",
+			url: `${apiUrl}/users/login`,
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -27,11 +28,11 @@ export const userLogin = async (email, password) => {
 
 export const getUser = async (token) => {
 	try {
-		const decodedToken = jwtDecode(token);
+		let id = jwtDecode(token)._id;
 		let config = {
 			method: "get",
 			maxBodyLength: Infinity,
-			url: `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/${decodedToken._id}`,
+			url: `${apiUrl}/users/${id}`,
 			headers: {
 				"x-auth-token": token,
 			},
@@ -49,7 +50,7 @@ export const registerUser = async (user) => {
 		let config = {
 			method: "post",
 			maxBodyLength: Infinity,
-			url: "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users",
+			url: `${apiUrl}/users`,
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -70,7 +71,7 @@ export const updateUser = async (user) => {
 		let config = {
 			method: "put",
 			maxBodyLength: Infinity,
-			url: `https://monkfish-app-z9uza.ondigitalocean.app/bcard2/users/${id}`,
+			url: `${apiUrl}/users/${id}`,
 			headers: {
 				"x-auth-token": token,
 				"Content-Type": "application/json",
