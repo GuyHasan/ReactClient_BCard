@@ -22,6 +22,60 @@ BCard is a React-based web application that allows users to create and manage di
   - The cards filter live according to the search value.
   - Upon moving to a different page, the search is cleared.
 
+---
+
+## Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/GuyHasan/ReactClient_BCard.git
+cd ReactClient_BCard
+```
+
+### 2. Install Dependencies
+
+Make sure you have Node.js (v14 or later) installed, then run:
+
+```bash
+npm install
+```
+
+### 3. Environment Variables
+
+Create a `.env` file in the root directory with the following content:
+
+```dotenv
+VITE_API_URL=http://localhost:8181
+```
+
+This variable will be used to configure API requests in the frontend. Access it in your code via:
+
+```javascript
+const apiUrl = import.meta.env.VITE_API_URL;
+```
+
+### 4. Run the Development Server
+
+```bash
+npm run dev
+```
+
+Your app should now be available at [http://localhost:5173](http://localhost:5173).
+
+---
+
+## Backend Integration
+
+This React client is designed to work seamlessly with the [NodeJsServer_BCard](https://github.com/GuyHasan/NodeJsServer_BCard) backend. Configure the API URL in your `.env` file:
+
+```dotenv
+VITE_API_URL=http://localhost:8181
+```
+
+The backend handles users, cards, and authentication . Refer to the NodeJsServer_BCard README for full backend setup and API route details.
+
+---
 
 ## Web Pages
 
@@ -49,6 +103,7 @@ The Login page enables users to sign in to their accounts using their credential
 ### Register
 The Register page allows new users to create an account on the BCard platform. It includes fields for entering their personal information, such as name, email, and password, as well as selecting their user type (personal or business). cannot be access while logged in.
 
+---
 
 ## Technologies Used
 
@@ -68,18 +123,4 @@ The Register page allows new users to create an account on the BCard platform. I
   - Saved in session storage (not local) for optimal user security.
   - Can be erased manually simply by using the logout button in the navbar.
 
-## Getting Started
 
-To get started with BCard, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/bcard.git
-2. **Install dependencies:**
-   ```bash
-   cd bcard
-    npm install
-
-1. **Run the application:**
-   ```bash
-       npm start
